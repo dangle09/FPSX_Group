@@ -1,0 +1,652 @@
+﻿
+@{
+    ViewData["Title"] = "Trang_Chu";
+    Layout = "~/Views/Shared/_CusLayout.cshtml";
+}
+
+<link rel="stylesheet"
+      href="~/css/cus_trang_chu.css"
+      asp-append-version="true" />
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="home-hero">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+
+        <div class="hero-badge">
+            <span></span>
+            WELCOME TO FPSXGROUP
+        </div>
+
+        <h1>
+            EXPLORE
+            <span>THE WORLD.</span>
+        </h1>
+
+        <p>
+            Khám phá thế giới game, tìm kiếm những tựa game
+            yêu thích và cập nhật những thông tin mới nhất
+            tại FPSXGROUP.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#featured"
+                   class="hero-btn primary">
+                Khám phá ngay
+                <span>→</span>
+            </a>
+
+            <a href="#about"
+                   class="hero-btn secondary">
+                Tìm hiểu thêm
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-scroll">
+
+        <span>SCROLL TO EXPLORE</span>
+
+        <div class="scroll-line"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="home-section about-section"
+         id="about">
+
+    <div class="about-image reveal-left">
+
+        <div class="image-frame">
+
+            <img src="~/images/home/about.jpg"
+                 alt="Gaming setup"
+                 onerror="this.style.display='none'" />
+
+            <div class="image-placeholder">
+                <span>FPSX</span>
+                <strong>GAMING</strong>
+            </div>
+
+        </div>
+
+        <div class="image-number">
+            01
+        </div>
+
+    </div>
+
+
+    <div class="about-content reveal-right">
+
+        <div class="section-label">
+            ABOUT US
+        </div>
+
+        <h2>
+            Một nơi dành cho
+            <span>những người yêu game.</span>
+        </h2>
+
+        <p>
+            FPSXGROUP được xây dựng với mục tiêu tạo ra một
+            không gian đơn giản, hiện đại và dễ sử dụng dành
+            cho cộng đồng game thủ.
+        </p>
+
+        <p>
+            Tại đây bạn có thể khám phá những tựa game mới,
+            tìm hiểu thông tin, theo dõi bảng xếp hạng và
+            chia sẻ niềm đam mê gaming của mình.
+        </p>
+
+
+        <div class="about-stats">
+
+            <div>
+                <strong>500+</strong>
+                <span>Games</span>
+            </div>
+
+            <div>
+                <strong>50K+</strong>
+                <span>Users</span>
+            </div>
+
+            <div>
+                <strong>100+</strong>
+                <span>Reviews</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="home-section features-section">
+
+    <div class="section-heading reveal">
+
+        <div>
+
+            <div class="section-label">
+                WHAT WE OFFER
+            </div>
+
+            <h2>
+                Mọi thứ bạn cần
+                <span>ở một nơi.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            FPSXGROUP mang đến trải nghiệm khám phá game
+            đơn giản nhưng đầy đủ.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card reveal">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <div class="feature-icon">
+                ◈
+            </div>
+
+            <h3>
+                Khám phá Game
+            </h3>
+
+            <p>
+                Tìm kiếm và khám phá hàng trăm tựa game
+                thuộc nhiều thể loại khác nhau.
+            </p>
+
+            <a href="#">
+                Explore →
+            </a>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <div class="feature-icon">
+                ◇
+            </div>
+
+            <h3>
+                Bảng xếp hạng
+            </h3>
+
+            <p>
+                Theo dõi những tựa game nổi bật và được
+                cộng đồng yêu thích nhất.
+            </p>
+
+            <a href="#">
+                View ranking →
+            </a>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-number">
+                03
+            </div>
+
+            <div class="feature-icon">
+                ◎
+            </div>
+
+            <h3>
+                Cộng đồng
+            </h3>
+
+            <p>
+                Chia sẻ trải nghiệm và tìm kiếm những
+                người có cùng sở thích gaming.
+            </p>
+
+            <a href="#">
+                Join us →
+            </a>
+
+        </div>
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-number">
+                04
+            </div>
+
+            <div class="feature-icon">
+                ↗
+            </div>
+
+            <h3>
+                Luôn cập nhật
+            </h3>
+
+            <p>
+                Những thông tin mới được cập nhật liên tục
+                để bạn không bỏ lỡ điều gì.
+            </p>
+
+            <a href="#">
+                Discover →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED GAMES
+===================================================== -->
+
+<section class="home-section featured-section"
+         id="featured">
+
+    <div class="section-heading reveal">
+
+        <div>
+
+            <div class="section-label">
+                FEATURED
+            </div>
+
+            <h2>
+                Những tựa game
+                <span>nổi bật.</span>
+            </h2>
+
+        </div>
+
+        <a href="#"
+               class="section-link">
+            Xem tất cả →
+        </a>
+
+    </div>
+
+
+    <div class="featured-grid">
+
+        <!-- GAME 01 -->
+
+        <article class="featured-card large reveal">
+
+            <div class="featured-image">
+
+                <img src="~/images/home/game-1.jpg"
+                     alt="Shadow Realm"
+                     onerror="this.style.display='none'" />
+
+                <div class="game-placeholder placeholder-one">
+                    SHADOW
+                    <strong>REALM</strong>
+                </div>
+
+            </div>
+
+            <div class="featured-info">
+
+                <div>
+                    <span class="game-category">
+                        ACTION RPG
+                    </span>
+
+                    <h3>
+                        Shadow Realm
+                    </h3>
+                </div>
+
+                <span class="game-rating">
+                    ★ 9.8
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- GAME 02 -->
+
+        <article class="featured-card reveal">
+
+            <div class="featured-image">
+
+                <img src="~/images/home/game-2.jpg"
+                     alt="Neon Velocity"
+                     onerror="this.style.display='none'" />
+
+                <div class="game-placeholder placeholder-two">
+                    NEON
+                    <strong>VELOCITY</strong>
+                </div>
+
+            </div>
+
+            <div class="featured-info">
+
+                <div>
+                    <span class="game-category">
+                        RACING
+                    </span>
+
+                    <h3>
+                        Neon Velocity
+                    </h3>
+                </div>
+
+                <span class="game-rating">
+                    ★ 9.5
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- GAME 03 -->
+
+        <article class="featured-card reveal">
+
+            <div class="featured-image">
+
+                <img src="~/images/home/game-3.jpg"
+                     alt="Dark Frontier"
+                     onerror="this.style.display='none'" />
+
+                <div class="game-placeholder placeholder-three">
+                    DARK
+                    <strong>FRONTIER</strong>
+                </div>
+
+            </div>
+
+            <div class="featured-info">
+
+                <div>
+                    <span class="game-category">
+                        STRATEGY
+                    </span>
+
+                    <h3>
+                        Dark Frontier
+                    </h3>
+                </div>
+
+                <span class="game-rating">
+                    ★ 9.3
+                </span>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section class="home-section categories-section">
+
+    <div class="section-heading reveal">
+
+        <div>
+
+            <div class="section-label">
+                CATEGORIES
+            </div>
+
+            <h2>
+                Chọn phong cách
+                <span>của bạn.</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="category-list">
+
+        <a href="#" class="category-item reveal">
+
+            <span class="category-number">
+                01
+            </span>
+
+            <span class="category-name">
+                Action
+            </span>
+
+            <span class="category-count">
+                128 Games
+            </span>
+
+            <span class="category-arrow">
+                ↗
+            </span>
+
+        </a>
+
+
+        <a href="#" class="category-item reveal">
+
+            <span class="category-number">
+                02
+            </span>
+
+            <span class="category-name">
+                RPG
+            </span>
+
+            <span class="category-count">
+                96 Games
+            </span>
+
+            <span class="category-arrow">
+                ↗
+            </span>
+
+        </a>
+
+
+        <a href="#" class="category-item reveal">
+
+            <span class="category-number">
+                03
+            </span>
+
+            <span class="category-name">
+                Racing
+            </span>
+
+            <span class="category-count">
+                74 Games
+            </span>
+
+            <span class="category-arrow">
+                ↗
+            </span>
+
+        </a>
+
+
+        <a href="#" class="category-item reveal">
+
+            <span class="category-number">
+                04
+            </span>
+
+            <span class="category-name">
+                Strategy
+            </span>
+
+            <span class="category-count">
+                62 Games
+            </span>
+
+            <span class="category-arrow">
+                ↗
+            </span>
+
+        </a>
+
+
+        <a href="#" class="category-item reveal">
+
+            <span class="category-number">
+                05
+            </span>
+
+            <span class="category-name">
+                Indie
+            </span>
+
+            <span class="category-count">
+                51 Games
+            </span>
+
+            <span class="category-arrow">
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section class="why-section">
+
+    <div class="why-background"></div>
+
+    <div class="why-content reveal">
+
+        <div class="section-label">
+            WHY FPSXGROUP
+        </div>
+
+        <h2>
+            Không chỉ là
+            <span>một website.</span>
+        </h2>
+
+        <p>
+            Chúng tôi muốn tạo ra một trải nghiệm nơi bạn
+            có thể tìm thấy tựa game tiếp theo mà mình sẽ
+            yêu thích.
+        </p>
+
+
+        <div class="why-points">
+
+            <div>
+                <span>01</span>
+                <strong>Simple</strong>
+            </div>
+
+            <div>
+                <span>02</span>
+                <strong>Modern</strong>
+            </div>
+
+            <div>
+                <span>03</span>
+                <strong>Community</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-content reveal">
+
+        <div class="section-label">
+            READY TO START?
+        </div>
+
+        <h2>
+            Tìm tựa game tiếp theo
+            <span>của bạn.</span>
+        </h2>
+
+        <p>
+            Hàng trăm trò chơi đang chờ bạn khám phá.
+        </p>
+
+        <a href="#featured"
+               class="hero-btn primary">
+            Bắt đầu khám phá
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<script src="~/js/cus_trang_chu.js"
+        asp-append-version="true"></script>

@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - FPSX Group</title>
+
+    <link rel="stylesheet" href="~/css/cuslayout.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a asp-controller="Cus"
+                   asp-action="Trang_Chu"
+                   class="site-logo">
+
+                <span class="logo-mark">F</span>
+
+                <span class="logo-text">
+                    FPSX<span>GROUP</span>
+                </span>
+
+            </a>
+
+
+            <!-- MENU -->
+            <nav class="main-nav">
+
+                <a asp-controller="Cus"
+                       asp-action="Trang_Chu"
+                       class="nav-item">
+                    Trang chủ
+                </a>
+
+                <a asp-controller="Cus"
+                       asp-action="ChuDe"
+                       class="nav-item">
+                    Chủ đề
+                </a>
+
+
+                <!-- GAMES -->
+                <div class="nav-dropdown">
+
+                    <a href="#"
+                           class="nav-item games-button">
+                        Games
+                    </a>
+
+                    <div class="games-menu">
+
+                        <div class="games-menu-title">
+                            KHÁM PHÁ GAME
+                        </div>
+
+                        <a asp-controller="Games"
+                               asp-action="Action"
+                               class="game-menu-item">
+
+                            <span class="game-menu-icon">🎮</span>
+
+                            <span>
+                                <strong>Tài xỉu</strong>
+                                <small>Tư duy sắc xuất</small>
+                            </span>
+
+                        </a>
+
+                        <a asp-controller="Games"
+                               asp-action="RPG"
+                               class="game-menu-item">
+
+                            <span class="game-menu-icon">⚔</span>
+
+                            <span>
+                                <strong>Bầu cua</strong>
+                                <small>Nhập vai làm cua</small>
+                            </span>
+
+                        </a>
+
+                        <a asp-controller="Games"
+                               asp-action="Racing"
+                               class="game-menu-item">
+
+                            <span class="game-menu-icon">🏎</span>
+
+                            <span>
+                                <strong>Cá độ</strong>
+                                <small>Tư duy tương lai</small>
+                            </span>
+
+                        </a>
+
+                        <a asp-controller="Games"
+                               asp-action="Strategy"
+                               class="game-menu-item">
+
+                            <span class="game-menu-icon">♟</span>
+
+                            <span>
+                                <strong>Tiến lên</strong>
+                                <small>Game chiến thuật</small>
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a asp-controller="Cus"
+                       asp-action="BXH"
+                       class="nav-item">
+                    BXH
+                </a>
+
+                <a asp-controller="Cus"
+                       asp-action="LienHe"
+                       class="nav-item">
+                    Liên hệ
+                </a>
+
+            </nav>
+
+
+            <!-- TÀI KHOẢN -->
+            <div class="account-area">
+
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <button class="account-button">
+
+                        <span class="user-avatar">
+                            @User.Identity.Name?.Substring(0, 1).ToUpper()
+                        </span>
+
+                        <span class="account-name">
+                            @User.Identity.Name
+                        </span>
+
+                        <span class="account-arrow">⌄</span>
+
+                    </button>
+
+                    <div class="account-menu">
+
+                        <a asp-controller="Account"
+                               asp-action="Profile">
+                            Hồ sơ
+                        </a>
+
+                        <a asp-controller="Account"
+                               asp-action="Settings">
+                            Cài đặt
+                        </a>
+
+                        <div class="menu-divider"></div>
+
+                        <a asp-controller="Account"
+                               asp-action="Logout"
+                               class="logout">
+                            Đăng xuất
+                        </a>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="guest-account">
+
+                        <a asp-controller="Account"
+                               asp-action="Login"
+                               class="login-link">
+                            Đăng nhập
+                        </a>
+
+                        <a asp-controller="Account"
+                               asp-action="Register"
+                               class="register-button">
+                            Đăng ký
+                        </a>
+
+                    </div>
+                }
+
+            </div>
+
+
+            <!-- MOBILE -->
+            <button type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="site-main">
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a asp-controller="Cus"
+                       asp-action="Trang_Chu"
+                       class="site-logo">
+
+                    <span class="logo-mark">F</span>
+
+                    <span class="logo-name">
+                        FPSX<span>GROUP</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Khám phá thế giới game,
+                    tìm kiếm những trải nghiệm
+                    phù hợp với bạn.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>KHÁM PHÁ</h4>
+
+                <a asp-controller="Cus"
+                       asp-action="Trang_Chu">
+                    Trang chủ
+                </a>
+
+                <a asp-controller="Cus"
+                       asp-action="ChuDe">
+                    Chủ đề
+                </a>
+
+                <a asp-controller="Cus"
+                       asp-action="BXH">
+                    BXH
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>HỖ TRỢ</h4>
+
+                <a asp-controller="Cus"
+                       asp-action="LienHe">
+                    Liên hệ
+                </a>
+
+                <a href="#">
+                    Điều khoản
+                </a>
+
+                <a href="#">
+                    Chính sách
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>LIÊN HỆ</h4>
+
+                <p>support@blackzone.com</p>
+                <p>Ho Chi Minh City</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 FPSX Group
+            </span>
+
+            <span>
+                All rights reserved.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="~/js/cuslayout.js"
+            asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
