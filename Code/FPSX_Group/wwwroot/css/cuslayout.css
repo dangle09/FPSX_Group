@@ -409,7 +409,7 @@ input {
 
 .site-main {
     min-height: calc(100vh - 76px);
-    padding-top: 76px;
+    padding-top:10px;
 }
 
 
