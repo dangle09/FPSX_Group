@@ -67,10 +67,11 @@
 
 .home-hero {
     position: relative;
-    min-height: 780px;
+    min-height: calc(100vh - 62px);
     display: flex;
     align-items: center;
     overflow: hidden;
+    padding: 70px 46px 60px;
 }
 
 .hero-background {
@@ -124,7 +125,7 @@
     max-width: 850px;
     color: #fff;
     font-size: clamp(65px, 9vw, 130px);
-    line-height: .85;
+    line-height: .95;
     letter-spacing: -7px;
     font-weight: 800;
 }
@@ -214,6 +215,275 @@
     background: #555;
 }
 
+/* =========================================================
+   HERO GLASS VISUAL
+========================================================= */
+
+.hero-visual {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    width: 68%;
+    height: 780px;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   GLASS IMAGE
+========================================= */
+
+.glass-image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient( 90deg, transparent 0%, black 12%, black 92%, transparent 100% );
+    mask-image: linear-gradient( 90deg, transparent 0%, black 12%, black 92%, transparent 100% );
+}
+
+
+    .glass-image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        opacity: .82;
+        filter: brightness(.82) contrast(1.12);
+        transform: scale(1.05);
+        z-index: 0;
+    }
+
+
+/* =========================================
+   LIGHT SWEEP
+========================================= */
+
+.glass-shine {
+    position: absolute;
+    top: -20%;
+    left: -45%;
+    width: 25%;
+    height: 140%;
+    /*
+       Dải sáng trắng mềm
+    */
+
+    background: linear-gradient( 90deg, transparent 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,.08) 40%, rgba(255,255,255,.85) 50%, rgba(255,255,255,.12) 60%, rgba(255,255,255,0) 80%, transparent 100% );
+    filter: blur(8px);
+    transform: skewX(-18deg) translateX(0);
+    opacity: 0;
+    /*
+       4 giây:
+
+       0s - 1s  : đứng yên
+       1s - 4s  : ánh sáng chạy
+       4s       : kết thúc
+       rồi lặp
+    */
+
+    animation: glassLightSweep 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   LIGHT ANIMATION
+========================================= */
+
+@keyframes glassLightSweep {
+    /* 0s */
+
+    0% {
+        left: -45%;
+        opacity: 0;
+    }
+    /* Chờ 1 giây */
+
+    20% {
+        left: -45%;
+        opacity: 0;
+    }
+    /* Bắt đầu */
+
+    25% {
+        left: -40%;
+        opacity: .15;
+    }
+    /* Chạy qua */
+
+    65% {
+        left: 110%;
+        opacity: .8;
+    }
+    /* Đi khỏi ảnh */
+
+    85% {
+        left: 150%;
+        opacity: 0;
+    }
+    /* Kết thúc chu kỳ */
+
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   SMALL GLASS PIECES
+========================================= */
+
+.glass-piece {
+    position: absolute;
+    display: block;
+    width: 7px;
+    height: 14px;
+    border: 1px solid rgba(255,255,255,.5);
+    background: linear-gradient( 135deg, rgba(255,255,255,.25), rgba(255,255,255,.02) );
+    box-shadow: 0 0 8px rgba(255,255,255,.12);
+    opacity: .45;
+    backdrop-filter: blur(2px);
+}
+
+
+/* Miểng 1 */
+
+.piece-1 {
+    top: 18%;
+    left: 17%;
+    width: 9px;
+    height: 22px;
+    transform: rotate(32deg);
+    animation: glassFloat1 6s ease-in-out infinite;
+}
+
+
+/* Miểng 2 */
+
+.piece-2 {
+    top: 29%;
+    right: 20%;
+    width: 6px;
+    height: 17px;
+    transform: rotate(-25deg);
+    animation: glassFloat2 7s ease-in-out infinite;
+}
+
+
+/* Miểng 3 */
+
+.piece-3 {
+    top: 52%;
+    left: 8%;
+    width: 5px;
+    height: 12px;
+    transform: rotate(55deg);
+    animation: glassFloat3 5s ease-in-out infinite;
+}
+
+
+/* Miểng 4 */
+
+.piece-4 {
+    top: 65%;
+    right: 11%;
+    width: 8px;
+    height: 18px;
+    transform: rotate(-45deg);
+    animation: glassFloat1 8s ease-in-out infinite reverse;
+}
+
+
+/* Miểng 5 */
+
+.piece-5 {
+    top: 38%;
+    right: 5%;
+    width: 4px;
+    height: 10px;
+    transform: rotate(70deg);
+    animation: glassFloat3 6s ease-in-out infinite;
+}
+
+
+/* Miểng 6 */
+
+.piece-6 {
+    top: 72%;
+    left: 23%;
+    width: 5px;
+    height: 14px;
+    transform: rotate(-20deg);
+    animation: glassFloat2 7s ease-in-out infinite reverse;
+}
+
+
+/* =========================================
+   GLASS PIECE ANIMATIONS
+========================================= */
+
+@keyframes glassFloat1 {
+
+    0% {
+        transform: translate(0, 0) rotate(32deg);
+    }
+
+    50% {
+        transform: translate(7px, -12px) rotate(45deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(32deg);
+    }
+}
+
+
+@keyframes glassFloat2 {
+
+    0% {
+        transform: translate(0, 0) rotate(-25deg);
+    }
+
+    50% {
+        transform: translate(-9px, 8px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(-25deg);
+    }
+}
+
+
+@keyframes glassFloat3 {
+
+    0% {
+        transform: translate(0, 0) rotate(55deg);
+    }
+
+    50% {
+        transform: translate(5px, -8px) rotate(70deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(55deg);
+    }
+}
+
+/* =========================================
+   DARK GRADIENT OVER IMAGE
+========================================= */
+
+.glass-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient( ellipse 65% 75% at 5% 15%, rgba(0, 0, 0, .92) 0%, rgba(0, 0, 0, .72) 30%, rgba(0, 0, 0, .38) 52%, rgba(0, 0, 0, .08) 75%, transparent 100% );
+}
 
 /* =========================================================
    ABOUT
@@ -248,24 +518,6 @@
 .about-image:hover img {
     transform: scale(1.05);
 }
-
-.image-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    font-size: 13px;
-    letter-spacing: 4px;
-}
-
-    .image-placeholder strong {
-        margin-top: 5px;
-        color: #fff;
-        font-size: 35px;
-    }
 
 .image-number {
     position: absolute;

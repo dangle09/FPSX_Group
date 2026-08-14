@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "Trang_TX";
+    Layout = "~/Views/Shared/_CusLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/minigame_1.css" asp-append-version="true" />
+
+<div class="mini-game-page">
+
+    <!-- ==============================
+         HEADER GAME
+    =============================== -->
+
+    <div class="game-header">
+
+        <div class="game-label">
+            FPSX MINI GAME
+        </div>
+
+        <h1>
+            ĐOÁN SỐ BÍ ẨN
+        </h1>
+
+        <p>
+            Chờ 10 giây, sau đó kéo chiếc vung sang trái hoặc phải
+            để khám phá những con số bên trong.
+        </p>
+
+    </div>
+
+
+    <!-- ==============================
+         GAME AREA
+    =============================== -->
+
+    <div class="game-container">
+
+        <!-- Countdown -->
+
+        <div class="game-status">
+
+            <div class="status-label">
+                TRẠNG THÁI
+            </div>
+
+            <div id="gameMessage">
+                Đang chuẩn bị...
+            </div>
+
+        </div>
+
+
+        <!-- Timer -->
+
+        <div class="game-timer">
+
+            <span id="timer">
+                30
+            </span>
+
+            <small>
+                GIÂY
+            </small>
+
+        </div>
+
+
+        <!-- ==============================
+             PLATE
+        =============================== -->
+
+        <div class="plate-area">
+
+            <img src="~/imgss/minigame/dia.png"
+                 class="plate-image"
+                 alt="Đĩa" />
+
+
+            <!-- 3 số -->
+
+            <div class="numbers">
+
+                <div class="number-box">
+                    <span id="number1">?</span>
+                </div>
+
+                <div class="number-box">
+                    <span id="number2">?</span>
+                </div>
+
+                <div class="number-box">
+                    <span id="number3">?</span>
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 LID
+            =============================== -->
+
+            <div id="lid"
+                 class="lid">
+
+                <img src="~/imgs/minigame/vung.png"
+                     alt="Vung"
+                     draggable="false" />
+
+            </div>
+
+
+            <!-- Drag hint -->
+
+            <div id="dragHint"
+                 class="drag-hint">
+
+                ← KÉO VUNG →
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             RESULT
+        =============================== -->
+
+        <div id="resultBox"
+             class="result-box">
+
+            <div class="result-icon">
+                ✦
+            </div>
+
+            <div id="resultText">
+                Xỉu
+            </div>
+
+            <div class="result-score">
+
+                Tổng:
+                <span id="resultScore">
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         BOTTOM INFO
+    =============================== -->
+
+    <div class="game-info">
+
+        <div>
+            <span>01</span>
+            Chờ vung mở khóa
+        </div>
+
+        <div>
+            <span>02</span>
+            Kéo vung sang trái / phải
+        </div>
+
+        <div>
+            <span>03</span>
+            Xem kết quả
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="~/js/minigame_1.js" asp-append-version="true"></script>

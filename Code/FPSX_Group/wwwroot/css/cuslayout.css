@@ -41,17 +41,20 @@ input {
 ========================================================= */
 
 .site-header {
-    position: fixed;
+    position: relative;
     top: 18px;
     left: 16px;
     width: calc(100% - 32px);
     height: 100px;
-    z-index: 1000;
+    /* QUAN TRỌNG */
+    z-index: 99999;
     background: rgba(8, 8, 8, .92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid #1b1b1b;
     border-radius: 8px;
+    overflow: visible;
+    isolation: isolate;
 }
 
 .header-container {
@@ -63,8 +66,9 @@ input {
     padding: 0 35px;
     display: flex;
     align-items: center;
+    z-index: 100000;
+    overflow: visible;
 }
-
 
 /* =========================================================
    LOGO
@@ -128,6 +132,8 @@ input {
     align-items: center;
     gap: 3px;
     white-space: nowrap;
+    z-index: 100001;
+    overflow: visible;
 }
 
 .nav-item {
@@ -174,14 +180,22 @@ input {
     height: 100%;
     display: flex;
     align-items: center;
+    z-index: 100002;
+    overflow: visible;
 }
+
+/* Nút Games */
 
 .games-button {
     gap: 7px;
+    position: relative;
+    z-index: 1002;
 }
 
 
-/* Dropdown */
+/* =========================================================
+   DROPDOWN
+========================================================= */
 
 .games-menu {
     position: absolute;
@@ -195,18 +209,53 @@ input {
     box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translate(-50%, -8px) scale(.97);
     transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+    z-index: 999999;
 }
+
+
+    /* =========================================
+   VÙNG HOVER VÔ HÌNH
+    ========================================= */
+
+    .games-menu::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -12px;
+        height: 12px;
+        background: transparent;
+    }
+
+
+/* =========================================
+   SHOW DROPDOWN
+========================================= */
 
 .nav-dropdown:hover .games-menu {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translate(-50%, 0) scale(1);
 }
 
 
-/* Dropdown title */
+/* Hiện dropdown */
+
+.nav-dropdown:hover .games-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0) scale(1);
+}
+
+
+/* =========================================================
+   DROPDOWN TITLE
+========================================================= */
 
 .games-menu-title {
     padding: 8px 10px 10px;
@@ -217,7 +266,9 @@ input {
 }
 
 
-/* Game item */
+/* =========================================================
+   GAME ITEM
+========================================================= */
 
 .game-menu-item {
     display: flex;
@@ -225,13 +276,19 @@ input {
     gap: 12px;
     padding: 10px;
     border-radius: 6px;
-    transition: .2s ease;
+    transition: background .2s ease, transform .2s ease;
 }
+
 
     .game-menu-item:hover {
         background: #1c1c1c;
         transform: translateX(4px);
     }
+
+
+/* =========================================================
+   GAME ICON
+========================================================= */
 
 .game-menu-icon {
     width: 36px;
@@ -246,12 +303,18 @@ input {
     font-size: 16px;
 }
 
+
+/* =========================================================
+   GAME TEXT
+========================================================= */
+
 .game-menu-item strong {
     display: block;
     color: #eee;
     font-size: 13px;
     font-weight: 600;
 }
+
 
 .game-menu-item small {
     display: block;
